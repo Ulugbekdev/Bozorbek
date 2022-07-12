@@ -1,0 +1,34 @@
+@mixin input
+    border: none
+    outline: none
+
+@mixin link 
+    text-decoration: none
+
+@mixin button
+    border: none
+    background: none
+    cursor: pointer
+
+@mixin icon($color, $x, $y)
+    color: $color
+    width: $x
+    height: $y
+
+@mixin font 
+    font-style: normal
+    font-family: 'Gotham Pro'
+
+@mixin fontRegular($size, $color: $darkBlue)
+    color: $color
+    font-size: $size
+    font-weight: 400
+
+    @include font
+    
+@mixin fontBold($size, $color: $darkBlue)
+    color: $color
+    font-size: $size
+    font-weight: 700
+
+    @include font

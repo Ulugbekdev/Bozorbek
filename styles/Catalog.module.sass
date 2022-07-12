@@ -1,0 +1,63 @@
+@import variables, mixins
+
+.catalog
+    width: 100%
+    display: flex
+    max-width: 400px
+    margin-right: 10px
+    border-radius: 3px
+    justify-content: start
+    padding: 7px 10px 18px 17px
+    box-shadow: inset 0px 0px 10px #00000029
+
+    &__backLink
+        width: 50px
+        height: 50px
+        display: flex
+        border-radius: 50%
+        align-items: center
+        background: #EFF4FA
+        justify-content: center
+        box-shadow: 0px 0px 10px #00000026
+
+        @include link
+
+    &__backLinkIcon
+        @include icon(#42445A, 29px, 29px)
+
+    &__content
+        max-height: 523px
+        overflow-y: scroll
+        flex: 1
+
+        &::-webkit-scrollbar
+            width: 6px
+
+        &::-webkit-scrollbar-track
+            background: $white
+            border-radius: 3px
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3)
+
+        &::-webkit-scrollbar-thumb
+            border-radius: 3px
+            background-color: #C4C4C4
+
+    &__heading
+        padding-left: 64px
+        margin-bottom: 20px
+
+        @include fontBold(40px, $darkBlue)
+
+    &__navLink
+        height: 47px
+        display: flex
+        position: relative
+        align-items: center
+        justify-content: start
+
+        @include link
+        @include fontRegular(22px, #42445ACC)
+
+    &__navIcon
+        margin: 0 15px 0 20px
+        @include icon(#42445A, 6px, 6px)

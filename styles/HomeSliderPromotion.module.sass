@@ -1,0 +1,28 @@
+@import variables, mixins
+
+.slider
+    width: 100%
+    max-width: 925px
+    max-height: 548px
+    border-radius: 5px
+
+    &__list 
+        display: flex
+        position: absolute
+        bottom: 19px
+        left: 50%
+        z-index: 1000
+        transform: translateX(-50%)
+
+    &__bullet
+        width: 10px
+        height: 10px
+        display: block
+        border-radius: 50%
+        background: $white
+
+        & + & 
+            margin-left: 5px
+
+        &_active
+            background: $darkBlue
