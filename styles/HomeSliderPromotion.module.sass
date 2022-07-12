@@ -6,22 +6,15 @@
     max-height: 548px
     border-radius: 5px
 
-    &__list 
-        display: flex
-        position: absolute
-        bottom: 19px
-        left: 50%
-        z-index: 1000
-        transform: translateX(-50%)
-
     &__bullet
         width: 10px
         height: 10px
-        display: block
+        cursor: pointer
         border-radius: 50%
         background: $white
+        display: inline-block
 
-        & + & 
+        & + &
             margin-left: 5px
 
         &_active

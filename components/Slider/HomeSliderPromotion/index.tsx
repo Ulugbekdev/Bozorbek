@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Pagination } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import styles from '../../../styles/HomeSliderPromotion.module.sass';
-
-SwiperCore.use([Pagination]);
 
 const HomeSliderPromotion = () => {
     return (
@@ -15,21 +15,20 @@ const HomeSliderPromotion = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 loop={true}
-                autoplay={{
-                    delay: 3000,
-                    stopOnLastSlide: false
-                }}
+                autoplay={true}
                 speed={500}
+                modules={[Pagination, Autoplay]}
                 pagination={{
-                    modifierClass: styles.slider__list,
+                    clickable: true,
                     bulletClass: styles.slider__bullet,
                     bulletActiveClass: styles.slider__bullet_active
                 }}
             >
-                <SwiperSlide tag='li'>
+                <SwiperSlide >
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
+                                priority={true}
                                 src={'/images/home-slider-promotion1.jpg'}
                                 alt='shopping'
                                 width={925}
@@ -38,7 +37,7 @@ const HomeSliderPromotion = () => {
                         </a>
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide tag='li'>
+                <SwiperSlide >
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
@@ -50,7 +49,7 @@ const HomeSliderPromotion = () => {
                         </a>
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide tag='li'>
+                <SwiperSlide >
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
@@ -62,7 +61,7 @@ const HomeSliderPromotion = () => {
                         </a>
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide tag='li'>
+                <SwiperSlide >
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
@@ -74,7 +73,7 @@ const HomeSliderPromotion = () => {
                         </a>
                     </Link>
                 </SwiperSlide>
-                <SwiperSlide tag='li'>
+                <SwiperSlide >
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
