@@ -1,0 +1,38 @@
+@import variables, mixins
+
+.productSlider
+    width: 100%
+    position: relative
+    margin-top: 30px
+
+    &__heading
+        padding-left: 35px
+
+        @include fontBold(40px, $green)
+
+    &__container
+        width: 100%
+        margin: 0 auto
+        max-width: 1180px
+
+    & [class$='wrapper']
+        height: 315px
+        padding: 30px 0 0
+
+    &__prev, &__next
+        @include button
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+
+    &__prev
+        left: 10px
+
+    &__next
+        right: 10px
+
+    &__navIcon
+        @include icon($darkBlue, 36px)
+
+        & path
+            height: 24px

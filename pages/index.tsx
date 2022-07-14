@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Catalog from '../components/Catalog';
-import HomeContainer from '../components/Container/HomeContainer';
-import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
 import ProductSlider from '../components/Slider/ProductSlider';
+import BigContainer from '../components/Container/BigContainer';
+import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
 
 const Home = () => {
 	return (
@@ -12,11 +12,12 @@ const Home = () => {
 				<title>Главная</title>
 			</Head>
 			<Header />
-			<HomeContainer>
+			<BigContainer>
 				<Catalog />
 				<HomeSliderPromotion />
-			</HomeContainer>
-			<ProductSlider/>
+			</BigContainer>
+			<ProductSlider type={'Фрукты'} classBtn={'fruit'} />
+			<ProductSlider type={'Овощи'} classBtn={'vegetable'} />
 		</>
 	)
 };

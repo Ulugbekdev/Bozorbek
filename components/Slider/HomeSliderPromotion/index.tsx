@@ -41,6 +41,7 @@ const HomeSliderPromotion = () => {
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
+                                priority={true}
                                 src={'/images/home-slider-promotion2.jpg'}
                                 alt='shopping'
                                 width={925}
@@ -53,6 +54,7 @@ const HomeSliderPromotion = () => {
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
+                                priority={true}
                                 src={'/images/home-slider-promotion3.jpg'}
                                 alt='shopping'
                                 width={925}
@@ -65,6 +67,7 @@ const HomeSliderPromotion = () => {
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
+                                priority={true}
                                 src={'/images/home-slider-promotion4.jpg'}
                                 alt='shopping'
                                 width={925}
@@ -77,6 +80,7 @@ const HomeSliderPromotion = () => {
                     <Link href={'/'}>
                         <a className={styles.slider__link}>
                             <Image
+                                priority={true}
                                 src={'/images/home-slider-promotion5.jpg'}
                                 alt='shopping'
                                 width={925}

@@ -1,23 +1,24 @@
 import Link from 'next/link';
-import styles from '../../styles/Header.module.sass';
 import { AiOutlineSearch } from 'react-icons/ai';
+import BigContainer from '../Container/BigContainer';
 import { GiShoppingBag, GiHamburgerMenu } from 'react-icons/gi';
+import styles from '../../styles/Header.module.sass';
 
 const Header = () => {
     return (
-        <>
+        <BigContainer>
             <header className={styles.header}>
                 <div className={styles.header__content}>
                     <Link href={'/'}>
                         <a className={styles.header__link}>Bozorbek</a>
                     </Link>
-                    <form>
-                        <div className={styles.header__input}>
+                    <form className={styles.header__form}>
+                        <div className={styles.header__form__input}>
                             <input
                                 type='text'
                                 placeholder='Поиск'
                             />
-                            <AiOutlineSearch className={styles.header__inputIcon}/>
+                            <AiOutlineSearch className={styles.header__form__inputIcon}/>
                         </div>                  
                     </form>
                     <div className={styles.header__cardData}>
@@ -29,7 +30,7 @@ const Header = () => {
                     </button>
                 </div>
             </header>
-        </>
+        </BigContainer>
     )
 };
 
