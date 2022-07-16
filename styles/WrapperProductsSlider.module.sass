@@ -1,0 +1,10 @@
+@import variables, mixins
+
+.wrapper
+    &__more
+        text-align: center
+        
+        &__btn
+            @include moreBtn(308px, 61px, 25px, $white)
+        &__icon
+            @include icon($blue, 22px)

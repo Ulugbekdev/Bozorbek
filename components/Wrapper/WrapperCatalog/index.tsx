@@ -1,4 +1,4 @@
-import styles from '../../styles/Wrapper.module.sass';
+import styles from '../../../styles/WrapperCatalog.module.sass';
 
 const Wrapper = (props: any) => {
     return (

@@ -3,7 +3,6 @@ import { Navigation } from 'swiper';
 import Container from '../../Container';
 import Product from '../../Product/ProductLink';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import BigContainer from '../../Container/BigContainer';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import 'swiper/css';
 import styles from '../../../styles/ProductSlider.module.sass';

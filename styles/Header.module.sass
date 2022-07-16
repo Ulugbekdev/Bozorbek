@@ -17,9 +17,9 @@
         justify-content: space-between
 
     &__link
-        @include link
-        @include fontBold(50px, $green)
         margin-right: 65px
+        
+        @include fontBold(50px, $green)
 
     &__form
         width: 100%
@@ -36,8 +36,6 @@
                 border-radius: 18px
                 background: #eff4fa80
                 box-shadow: 0px 0px 10px #42445a2e
-
-                @include input
 
                 &::placeholder
                     @include fontRegular(25px, $darkBlue)
@@ -62,9 +60,6 @@
         margin-left: 8px
 
         @include icon($green, 26px)
-
-    &__burgerBtn
-        @include button
 
     &__burgerIcon
         @include icon($green, 40px)
