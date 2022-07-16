@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsBag } from 'react-icons/bs';
-import styles from '../../../styles/Product.module.sass';
+import styles from '../../../styles/ProductLink.module.sass';
 
 const ProductLink = ({ src, alt, title, price }: any) => {
     return (

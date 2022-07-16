@@ -1,8 +1,12 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Catalog from '../components/Catalog';
+import Wrapper from '../components/Wrapper';
+import Support from '../components/Support';
+import Container from '../components/Container';
 import ProductSlider from '../components/Slider/ProductSlider';
 import BigContainer from '../components/Container/BigContainer';
+import ProductsSales from '../components/Product/ProductsSales';
 import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
 
 const Home = () => {
@@ -13,11 +17,17 @@ const Home = () => {
 			</Head>
 			<Header />
 			<BigContainer>
-				<Catalog />
-				<HomeSliderPromotion />
+				<Wrapper>
+					<Catalog />
+					<HomeSliderPromotion />
+				</Wrapper>
+				<ProductSlider type={'Фрукты'} classBtn={'fruit'} />
+				<ProductSlider type={'Овощи'} classBtn={'vegetable'} />
 			</BigContainer>
-			<ProductSlider type={'Фрукты'} classBtn={'fruit'} />
-			<ProductSlider type={'Овощи'} classBtn={'vegetable'} />
+			<Container>
+				<ProductsSales />
+				<Support />
+			</Container>
 		</>
 	)
 };
