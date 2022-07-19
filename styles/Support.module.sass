@@ -46,8 +46,55 @@
         &__icon
             margin-right: 5px
             @include icon($white, 18px)
-           
+
     &__img
         position: absolute
         top: -50px
         right: 0
+
+    @media (max-width: 1180px)
+        padding: 30px
+
+        &__img
+            top: 50%
+            transform: translateY(-50%)
+
+            & span
+                width: 400px !important
+                height: 215px !important
+    
+    @media (max-width: 991px)
+        text-align: center
+
+        &__form
+            margin: 0 auto
+
+        &__img
+            top: 0
+            position: static
+            text-align: center
+            transform: translateY(0)
+
+            & span
+                width: 700px !important
+                height: 400px !important
+
+    @media (max-width: 767px)
+        &__title
+            font-size: 30px
+
+        &__subtitle
+            font-size: 15px
+
+    @media (max-width: 574px)
+        &__form
+            display: block
+
+            &__input
+                margin: 0 auto
+
+            &__btn
+                margin: 15px auto 0 
+        
+        &__img
+            display: none

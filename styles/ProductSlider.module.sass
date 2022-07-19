@@ -21,6 +21,7 @@
     &__prev, &__next
         position: absolute
         top: 50%
+        z-index: 3
         transform: translateY(-50%)
 
     &__prev
@@ -34,3 +35,20 @@
 
         & path
             height: 24px
+
+    @media ( max-width:  1180px)
+        & [class$='wrapper']
+            height: 363px
+
+    @media ( max-width:  767px)
+        & [class$='wrapper']
+            height: 385px
+
+    @media ( max-width:  574px)
+        & [class$='wrapper']
+            height: 485px
+            padding: 30px 0
+    
+    @media ( max-width:  440px)
+        & [class$='wrapper']
+            height: 325px

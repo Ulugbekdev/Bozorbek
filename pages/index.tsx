@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Catalog from '../components/Catalog';
 import Support from '../components/Support';
 import Container from '../components/Container';
@@ -21,13 +22,14 @@ const Home = () => {
 					<Catalog />
 					<HomeSliderPromotion />
 				</WrapperCatalog>
-				<WrapperProductsSales/>
+				<WrapperProductsSales />
 			</BigContainer>
 			<Container>
-				<ProductsSales />
+				<ProductsSales /> 
 			</Container>
 			<BigContainer>
 				<Support />
+				<Footer />
 			</BigContainer>
 		</>
 	)

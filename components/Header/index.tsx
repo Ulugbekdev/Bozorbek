@@ -6,31 +6,33 @@ import styles from '../../styles/Header.module.sass';
 
 const Header = () => {
     return (
-        <BigContainer>
-            <header className={styles.header}>
-                <div className={styles.header__content}>
+        <header className={styles.header}>
+            <BigContainer>
+                <div className={styles.header__wrapper}>
                     <Link href={'/'}>
-                        <a className={styles.header__link}>Bozorbek</a>
+                        <a className={styles.header__logo}>Bozorbek</a>
                     </Link>
-                    <form className={styles.header__form}>
-                        <div className={styles.header__form__input}>
-                            <input
-                                type='text'
-                                placeholder='Поиск'
-                            />
-                            <AiOutlineSearch className={styles.header__form__inputIcon}/>
-                        </div>                  
-                    </form>
-                    <div className={styles.header__cardData}>
-                        <GiShoppingBag className={styles.header__cardDataIcon}/>
-                        50 000 сум
+                    <div className={styles.header__content}>
+                        <form className={styles.header__form}>
+                            <div className={styles.header__form__input}>
+                                <input
+                                    type='text'
+                                    placeholder='Поиск'
+                                />
+                                <AiOutlineSearch className={styles.header__form__inputIcon} />
+                            </div>
+                        </form>
+                        <div className={styles.header__cardData}>
+                            <GiShoppingBag className={styles.header__cardDataIcon} />
+                            50 000 сум
+                        </div>
                     </div>
                     <button className={styles.header__burgerBtn}>
-                        <GiHamburgerMenu className={styles.header__burgerIcon}/>
+                        <GiHamburgerMenu className={styles.header__burgerIcon} />
                     </button>
                 </div>
-            </header>
-        </BigContainer>
+            </BigContainer>
+        </header>
     )
 };
 

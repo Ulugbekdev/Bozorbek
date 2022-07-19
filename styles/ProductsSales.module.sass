@@ -1,32 +1,47 @@
 @import variables, mixins
 
 .products
-    width: 100%
-
-    &__title 
+    &__title
         @include fontRegular(40px, $darkBlue)
-    
+
     &__subtitle
         margin-bottom: 28px
         text-transform: uppercase
-        
+
         @include fontRegular(20px, #C4C4C4)
 
     &__wrapper
+        width: 100%
         display: flex
-        flex-wrap: wrap
         margin: -10px
+        flex-wrap: wrap
         max-height: 765px
         align-items: flex-start
         flex-direction: column
         justify-content: space-between
-    
+
     &__more
         margin: 25px 0 40px
         text-align: center
 
         &__btn
             @include moreBtn(233px, 47px, 20px, $white)
-        
+
         &__icon
             @include icon($blue, 18px)
+
+    @media (max-width: 1180px)
+        padding: 30px
+        
+        &__wrapper
+            margin: 0
+            overflow-x: scroll
+            max-height: 830px
+
+    @media (max-width: 768px)
+        &__wrapper
+            max-height: 830px
+
+    @media (max-width: 575px)
+        &__wrapper
+            max-height: 1092px

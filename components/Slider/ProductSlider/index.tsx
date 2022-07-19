@@ -13,11 +13,25 @@ const ProductSlider = (props: any) => {
             <h1 className={styles.productSlider__heading}>{props.type}</h1>
             <Container>
                 <Swiper
-                    slidesPerView={5}
+                    slidesPerView={'auto'}
                     loop={true}
                     speed={200}
                     wrapperClass={styles.productSlider__wrapper}
                     modules={[Navigation]}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1
+                        },
+                        575: {
+                            slidesPerView: 2
+                        }, 
+                        768: {
+                            slidesPerView: 3
+                        },
+                        1200: {
+                            slidesPerView: 5
+                        }
+                    }}
                     navigation={{
                         prevEl: `.swiper-${props.classBtn}-prev`,
                         nextEl: `.swiper-${props.classBtn}-next`

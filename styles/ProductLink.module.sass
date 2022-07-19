@@ -5,9 +5,9 @@
     height: 245px
     margin: 0 12px
     display: block
-    max-width: 212px
     position: relative
     border-radius: 15px
+    max-width: calc(100% - 20px)
     box-shadow: 0px 0px 10px #00000026
     transition: height .2s linear, max-width .2s linear, margin .2s linear
 
@@ -52,11 +52,79 @@
 
     &:hover
         height: 300px
-        max-width: 232px
         margin: -22px 2px 0
+        max-width: 100%
 
         & .product__linkIcon
             background: $blue
 
             & svg
                 color: $white
+
+    @media ( max-width:  1180px)
+        margin: 0 50px
+        height: 318px
+        max-width: calc(100% - 100px)
+
+        &:hover
+            height: 318px
+            margin: 0 50px
+            max-width: calc(100% - 100px)
+
+    @media ( max-width:  991px)
+        margin: 0 20px
+        max-width: calc(100% - 40px)
+
+        &:hover
+            margin: 0 20px
+            max-width: calc(100% - 40px)
+    
+    @media ( max-width:  767px)
+        height: 348px
+
+        &:hover
+            height: 348px
+
+    @media ( max-width:  574px)
+        height: 485px
+        margin: 0 50px
+        max-width: calc(100% - 100px)
+        
+        &__content
+            bottom: 100px
+
+        &__title
+            font-size: 40px
+        
+        &__price
+            font-size: 20px
+
+        &__linkIcon
+            bottom: 10px
+
+        &:hover
+            height: 485px
+            margin: 0 50px
+            max-width: calc(100% - 100px)
+    
+    @media ( max-width:  440px)
+        height: 325px
+
+        &__content
+            bottom: 10px
+
+        &__title
+            font-size: 30px
+        
+        &__price
+            font-size: 15px
+
+        &__linkIcon
+            left: auto
+            right: 10px
+            width: 40px
+            height: 40px
+            transform: translateX(0)
+
+        &:hover
+            height: 325px
