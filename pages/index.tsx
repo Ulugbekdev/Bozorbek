@@ -9,6 +9,7 @@ import BigContainer from '../components/Container/BigContainer';
 import ProductsSales from '../components/Product/ProductsSales';
 import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
 import WrapperProductsSales from '../components/Wrapper/WrapperProductsSlider';
+import Search from '../components/Search';
 
 const Home = () => {
 	return (
@@ -16,6 +17,7 @@ const Home = () => {
 			<Head>
 				<title>Главная</title>
 			</Head>
+			<Search />
 			<Header />
 			<BigContainer>
 				<WrapperCatalog>

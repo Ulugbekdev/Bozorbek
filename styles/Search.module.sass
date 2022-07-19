@@ -1,0 +1,57 @@
+@import variables, mixins
+
+.search
+    height: 100vh
+    background: url('/images/search-bg.jpg') no-repeat center /cover
+
+    &__wrapper
+        position: absolute
+        top: 40%
+        left: 50%
+        text-align: center
+        transform: translate(-50%, -40%)
+
+    &__form
+        max-width: 828px
+        position: relative
+        margin: 45px auto 25px
+
+        &__input
+            width: 100%
+            height: 73px
+            font-size: 25px
+            padding-left: 80px
+            border-radius: 20px
+            box-shadow: 0px 0px 10px #00000026
+
+            &::placeholder
+                @include fontRegular(25px, $darkBlue)
+
+        &__icon
+            position: absolute
+            top: 50%
+            left: 25px
+            transform: translateY(-50%)
+
+            @include icon($darkBlue, 30px)
+
+    &__prompt
+        @include fontRegular(30px, #42445A80)
+
+    &__down
+        width: 68px
+        height: 68px
+        color: $white
+        display: flex
+        font-size: 35px
+        background: $blue
+        border-radius: 50%
+        align-items: center
+        justify-content: center
+        position: absolute
+        bottom: 50px
+        left: 50%
+        transform: translateX(-50%)
+
+    @media (max-width: 991px)
+        padding: 10% 15px 0
