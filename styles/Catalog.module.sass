@@ -35,7 +35,7 @@
         box-shadow: inset 0px 0px 10px #00000029
         transition: .3s left linear
 
-    &__backLink
+    &__backBtn
         width: 50px
         height: 50px
         display: flex
@@ -45,8 +45,8 @@
         justify-content: center
         box-shadow: 0px 0px 10px #00000026
 
-    &__backLinkIcon
-        @include icon(#42445A, 29px)
+        &__Icon
+            @include icon(#42445A, 29px)
 
     &__content
         max-height: 523px
@@ -104,7 +104,7 @@
         &__open
             display: flex
 
-            &[class$='active'] + .catalog__wrapper
+            &_active + .catalog__wrapper
                 left: 0
 
     @media (max-width: 767px)

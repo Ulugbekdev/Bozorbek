@@ -1,8 +1,11 @@
 import Image from 'next/image';
+import { useScrollTo } from 'react-use-window-scroll';
 import { AiOutlineSearch, AiOutlineArrowDown } from 'react-icons/ai';
 import styles from '../../styles/Search.module.sass';
 
 const Search = () => {
+    const scrollto = useScrollTo();
+
     return (
         <div className={styles.search}>
             <div className={styles.search__wrapper}>
@@ -20,7 +23,10 @@ const Search = () => {
                 </form>
                 <p className={styles.search__prompt}>Введите в поиск название нужных вам продуктов.</p>
             </div>
-            <button className={styles.search__down}>
+            <button
+                className={styles.search__down}
+                onClick={() => scrollto({top: window.innerHeight, behavior: 'smooth'})}
+            >
                 <AiOutlineArrowDown />
             </button>
         </div>
