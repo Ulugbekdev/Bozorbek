@@ -51,7 +51,12 @@
         position: absolute
         bottom: 50px
         left: 50%
+        z-index: 3
         transform: translateX(-50%)
 
     @media (max-width: 991px)
         padding: 10% 15px 0
+
+    @media (max-width: 574px)
+        &__wrapper
+            width: calc(100% - 20%)
