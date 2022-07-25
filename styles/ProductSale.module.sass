@@ -32,7 +32,7 @@
     &__btn
         z-index: 1000
 
-    @media (max-width: 1180px)
+    @media (max-width: 991px)
         max-width: calc(100% / 3 - 20px)
     
     @media (max-width: 768px)
@@ -41,7 +41,6 @@
     @media (max-width: 575px)
         max-width: 70%
         margin: 10px 15%
-        flex-direction: column-reverse
 
         &__content
             text-align: center
@@ -86,18 +85,6 @@
         right: 10px
         bottom: 10px
         @include productBtn(30px, 30px, #EEF3F9, $black, 18px)
-
-    @media (max-width: 1180px)
-        &__hr
-            margin: 20px 0 21px 55px
-    
-    @media (max-width: 991px)
-        &__hr
-            margin: 12px 0 12px 55px
-
-    @media (max-width: 768px)
-        &__hr
-            margin: 20px 0 20px 55px
 
 .productPopular
     background: #EEF3F9
@@ -153,7 +140,9 @@
 
         @include productBtn(30px, 30px, $white, $black, 18px)
 
-    @media (max-width: 1180px)
+    @media (max-width: 767px)
         &__img
             & span
-                height: 200px!important
+                width: 70%!important
+                display: block!important
+                margin: 0 auto!important

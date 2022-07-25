@@ -15,7 +15,8 @@
         display: flex
         margin: -10px
         flex-wrap: wrap
-        max-height: 765px
+        max-height: 920px
+        overflow: hidden
         align-items: flex-start
         flex-direction: column
         justify-content: space-between
@@ -30,18 +31,14 @@
         &__icon
             @include icon($blue, 18px)
 
-    @media (max-width: 1180px)
-        padding: 30px
-        
+    @media (max-width: 991px)
         &__wrapper
-            margin: 0
-            overflow-x: scroll
-            max-height: 830px
+            max-height: 1225px
 
     @media (max-width: 768px)
         &__wrapper
-            max-height: 830px
+            max-height: 1820px
 
     @media (max-width: 575px)
         &__wrapper
-            max-height: 1092px
+            max-height: 3585px

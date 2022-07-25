@@ -10,8 +10,10 @@ import ProductsSales from '../components/Product/ProductsSales';
 import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
 import WrapperProductsSales from '../components/Wrapper/WrapperProductsSlider';
 import Search from '../components/Search';
+import { homePage} from '../redux/requests';
 
-const Home = () => {
+const Home = (props: any) => {
+
 	return (
 		<>
 			<Head>
@@ -21,13 +23,13 @@ const Home = () => {
 			<Header />
 			<BigContainer>
 				<WrapperCatalog>
-					<Catalog />
+					<Catalog categories={props.categories}/>
 					<HomeSliderPromotion />
 				</WrapperCatalog>
 				<WrapperProductsSales />
 			</BigContainer>
 			<Container>
-				<ProductsSales /> 
+				<ProductsSales products={props.discountProducts}/> 
 			</Container>
 			<BigContainer>
 				<Support />
@@ -38,3 +40,15 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getStaticProps () {
+	const categories = await homePage.getCategories()
+	const discountProducts = await homePage.getDiscountProducts()
+
+    return {
+        props: {
+			categories,
+			discountProducts
+        },
+    }
+}
