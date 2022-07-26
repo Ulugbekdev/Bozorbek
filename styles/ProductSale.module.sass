@@ -47,7 +47,6 @@
             @include fontBold(13px, $white)
 
     &__img
-        transition: .3s
         & span
             & img
                 object-fit: contain!important
@@ -87,7 +86,6 @@
     &__btn
         right: 10px
         bottom: 10px
-        z-index: 1000
         transition: .3s
 
         @include productBtn(30px, 30px, #EEF3F9, $black, 18px)
@@ -98,6 +96,7 @@
         text-align: center
         background: #EEF3F9
         padding: 18px 10px 14px
+        z-index: 2
 
         .product__title
             bottom: 35px
@@ -144,8 +143,9 @@
         .product__btn
             bottom: 15px
             right: 15px
+            z-index: 1000
 
             @include productBtn(30px, 30px, $white, $black, 18px)
 
-    @media (max-width: 574px)
+    @media (max-width: 767px)
         justify-content: space-around
