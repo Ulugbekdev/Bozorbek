@@ -1,148 +1,151 @@
 @import variables, mixins
 
-.product, .productPopular
-    width: 100%
-    margin: 10px
-    border-radius: 15px
-    position: relative
-    max-width: calc(25% - 20px)
-    box-shadow: 0px 0px 10px #00000026
-
-    &__sale, &__spans__sale
-        display: flex
-        align-items: center
-        background: #FF8D44
-        justify-content: center
-
-        @include fontBold(10px, $white)
-
-    &__oldPrice, &__prices__oldPrice
-        position: relative
-
-        &::before
-            content: ''
-            width: 100%
-            height: 1px
-            display: block
-            background: rgb(255, 5, 5, 76%)
-            position: absolute
-            top: 50%
-            transform: translateY(-50%)
-
-    &__btn
-        z-index: 1000
-
-    @media (max-width: 991px)
-        max-width: calc(100% / 3 - 20px)
-    
-    @media (max-width: 768px)
-        max-width: calc(100% / 2 - 20px)
-    
-    @media (max-width: 575px)
-        max-width: 70%
-        margin: 10px 15%
-
-        &__content
-            text-align: center
-
-        &__prices
-            flex-direction: column
-
 .product
     display: flex
-    align-items: center
+    cursor: pointer
+    transition: .3s
     background: $white
+    position: relative
+    border-radius: 15px
+    align-items: center
     padding: 18px 10px 14px
     justify-content: space-between
+    box-shadow: 0px 0px 10px #00000026
 
     &__title
         margin-bottom: 7px
+        transition: .3s
 
         @include fontRegular(15px, $black)
 
     &__sale
-        width: 55px
-        height: 13px
-        font-size: 10px
-        border-radius: 5px
+        transition: .3s
+
+        &_discount
+            width: 55px
+            height: 13px
+            display: flex
+            transition: .3s
+            font-size: 10px
+            border-radius: 5px
+            align-items: center
+            background: #FF8D44
+            justify-content: center
+
+            @include fontBold(10px, $white)
+
+        &_popular
+            width: 105px
+            height: 18px
+            display: none
+            transition: .3s
+            background: $blue
+            border-radius: 6px
+            align-items: center
+            justify-content: center
+
+            @include fontBold(13px, $white)
+
+    &__img
+        transition: .3s
+        & span
+            & img
+                object-fit: contain!important
 
     &__hr
         width: 44px
         margin: 14px 0 14px 55px
         border: 1px solid #00000070
 
-    &__oldPrice, &__newPrice
-        & span
+    &__price
+        transition: .3s
+
+        &_old, &_new
+            transition: .3s
+
+            & span
             @include fontRegular(14px, #00000070)
 
-    &__oldPrice
-        @include fontBold(14px, $black)
+        &_old
+            position: relative
 
-    &__newPrice
-        @include fontBold(16px, $black)
+            @include fontBold(14px, $black)
+
+            &::before
+                content: ''
+                width: 100%
+                height: 1px
+                display: block
+                background: rgb(255, 5, 5, 76%)
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+
+        &_new
+            @include fontBold(16px, $black)
 
     &__btn
         right: 10px
         bottom: 10px
+        z-index: 1000
+        transition: .3s
+
         @include productBtn(30px, 30px, #EEF3F9, $black, 18px)
 
-.productPopular
-    background: #EEF3F9
-    padding: 18px 9px 14px 27px
+    &:hover
+        height: 288px
+        display: block
+        text-align: center
+        background: #EEF3F9
+        padding: 18px 10px 14px
 
-    &__spans
-        display: flex
-        margin-bottom: 20px
+        .product__title
+            bottom: 35px
+            position: absolute
 
-        &__sale
-            width: 75px
-            height: 18px
-            font-size: 13px
-            margin-right: 9px
-            border-radius: 6px
+            @include fontBold(20px, $darkBlue)
 
-        &__popular
-            width: 105px
-            height: 18px
+        .product__sale
             display: flex
-            border-radius: 6px
             align-items: center
-            background: $blue
-            justify-content: center
+            justify-content: flex-start
 
-            @include fontBold(13px, $white)
+            &_discount
+                width: 75px
+                height: 18px
+                font-size: 13px
+                margin-right: 9px
+                border-radius: 6px
 
-    &__img
-        & span
-            width: 100%!important
+            &_popular
+                display: flex
 
-    &__title
-        @include fontRegular(20px, $darkBlue)
+        .product__hr
+            display: none
 
-    &__prices
-        display: flex
-        align-items: center
+        .product__oldPrice, .product__newPrice
+            max-width: 150px
+            text-align: center
 
-        &__oldPrice
-            @include fontBold(12px, $black)
+        .product__img
+            margin: 15px 0 40px
 
             & span
-                @include fontBold(12px, rgba(0, 0, 0, 50%))
+                height: 150px!important
+                width: 100%!important
 
-        &__newPrice
-            margin-right: 7px
+        .product__price
+            display: flex
+            align-items: center
+            flex-direction: row-reverse
+            position: absolute
+            bottom: 15px
 
-            @include fontRegular(14px, $black)
+        .product__btn
+            bottom: 15px
+            right: 15px
 
-    &__btn
-        bottom: 15px
-        right: 15px
+            @include productBtn(30px, 30px, $white, $black, 18px)
 
-        @include productBtn(30px, 30px, $white, $black, 18px)
-
-    @media (max-width: 767px)
-        &__img
-            & span
-                width: 70%!important
-                display: block!important
-                margin: 0 auto!important
+    @media (max-width: 574px)
+        justify-content: space-around

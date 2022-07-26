@@ -25,7 +25,7 @@ const Catalog = (props: any) => {
                     </button>
                 </div>
                 <div className={styles.catalog__content}>
-                    <h1 className={styles.catalog__heading}>{props.hello}</h1>
+                    <h1 className={styles.catalog__heading}>Каталог</h1>
                     <nav className={styles.catalog__nav}>
                         {arrayCategories(props.categories)}
                     </nav>

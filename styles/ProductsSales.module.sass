@@ -11,15 +11,13 @@
         @include fontRegular(20px, #C4C4C4)
 
     &__wrapper
+        gap: 20px
         width: 100%
-        display: flex
-        margin: -10px
-        flex-wrap: wrap
-        max-height: 920px
-        overflow: hidden
-        align-items: flex-start
-        flex-direction: column
-        justify-content: space-between
+        display: grid
+        align-items: start
+        grid-auto-rows: minmax(134px, auto)
+        align-self: start
+        grid-template-columns: repeat(4, 1fr)
 
     &__more
         margin: 25px 0 40px
@@ -33,12 +31,22 @@
 
     @media (max-width: 991px)
         &__wrapper
-            max-height: 1225px
+            grid-template-columns: repeat(3, 1fr)
 
     @media (max-width: 768px)
+        &__title, &__subtitle
+            text-align: center
+
         &__wrapper
-            max-height: 1820px
+            grid-template-columns: repeat(2, 1fr)
 
     @media (max-width: 575px)
+        &__title
+            font-size: 30px
+
+        &__subtitle
+            font-size: 18px
+
         &__wrapper
-            max-height: 3585px
+            justify-content: center
+            grid-template-columns: 70%

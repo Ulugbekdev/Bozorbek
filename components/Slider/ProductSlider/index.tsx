@@ -1,16 +1,16 @@
 import cn from 'classnames';
 import { Navigation } from 'swiper';
 import Container from '../../Container';
-import Product from '../../Product/ProductLink';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import 'swiper/css';
 import styles from '../../../styles/ProductSlider.module.sass';
+import { arraySlide } from './arraySlide';
 
 const ProductSlider = (props: any) => {
     return (
         <div className={styles.productSlider}>
-            <h1 className={styles.productSlider__heading}>{props.type}</h1>
+            <h1 className={styles.productSlider__heading}>{props.category}</h1>
             <Container>
                 <Swiper
                     slidesPerView={'auto'}
@@ -24,7 +24,7 @@ const ProductSlider = (props: any) => {
                         },
                         575: {
                             slidesPerView: 2
-                        }, 
+                        },
                         768: {
                             slidesPerView: 3
                         },
@@ -39,86 +39,7 @@ const ProductSlider = (props: any) => {
                     onNavigationNext={(swiper) => swiper.slideNext()}
                     onNavigationPrev={(swiper) => swiper.slidePrev()}
                 >
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-peach.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-strawberry.jpg'
-                            alt='клубника'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-grapes.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-peach.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-peach.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-strawberry.jpg'
-                            alt='клубника'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-grapes.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-peach.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-strawberry.jpg'
-                            alt='клубника'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Product
-                            src='/images/product-grapes.jpg'
-                            alt='персик'
-                            title='Лимон'
-                            price='10 000 сум/кг'
-                        />
-                    </SwiperSlide>
+                    {arraySlide(props.products)}
                 </Swiper>
                 <button className={cn([styles.productSlider__prev, `swiper-${props.classBtn}-prev`])}>
                     <IoIosArrowBack className={styles.productSlider__navIcon} />

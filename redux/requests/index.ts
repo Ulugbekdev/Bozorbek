@@ -11,5 +11,8 @@ export const homePage = {
     },
     getDiscountProducts() {
         return initial.get('products/discount_products').then((res) => res.data.results)
+    },
+    getProductsCategory(category: any) {
+        return initial.get(`products/${category}`).then((res) => res.data.products)
     }
 }

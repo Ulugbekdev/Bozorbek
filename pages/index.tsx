@@ -8,12 +8,13 @@ import WrapperCatalog from '../components/Wrapper/WrapperCatalog';
 import BigContainer from '../components/Container/BigContainer';
 import ProductsSales from '../components/Product/ProductsSales';
 import HomeSliderPromotion from '../components/Slider/HomeSliderPromotion';
-import WrapperProductsSales from '../components/Wrapper/WrapperProductsSlider';
+import WrapperProductsSlider from '../components/Wrapper/WrapperProductsSlider';
 import Search from '../components/Search';
-import { homePage} from '../redux/requests';
+import { homePage } from '../redux/requests';
 
 const Home = (props: any) => {
-
+	console.log(props.productsCategory);
+	
 	return (
 		<>
 			<Head>
@@ -23,13 +24,13 @@ const Home = (props: any) => {
 			<Header />
 			<BigContainer>
 				<WrapperCatalog>
-					<Catalog categories={props.categories}/>
+					<Catalog categories={props.categories} />
 					<HomeSliderPromotion />
 				</WrapperCatalog>
-				<WrapperProductsSales />
+				<WrapperProductsSlider productsCategory={props.productsCategory}/>
 			</BigContainer>
 			<Container>
-				<ProductsSales products={props.discountProducts}/> 
+				<ProductsSales products={props.discountProducts} />
 			</Container>
 			<BigContainer>
 				<Support />
@@ -41,14 +42,21 @@ const Home = (props: any) => {
 
 export default Home;
 
-export async function getStaticProps () {
-	const categories = await homePage.getCategories()
-	const discountProducts = await homePage.getDiscountProducts()
+export async function getStaticProps() {
+	const categories = await homePage.getCategories();
+	const discountProducts = await homePage.getDiscountProducts();
+	const categoriesProducts = categories.slice(0, 2);
+	const productsCategory: Array<any> = [];
+	const productsCategoryBk = await homePage.getProductsCategory(categoriesProducts[0].slug);	
+	const productsCategoryGg = await homePage.getProductsCategory(categoriesProducts[1].slug);	
+	productsCategory.push(productsCategoryBk);
+	productsCategory.push(productsCategoryGg);
 
-    return {
-        props: {
+	return {
+		props: {
 			categories,
-			discountProducts
-        },
-    }
+			discountProducts,
+			productsCategory
+		},
+	}
 }
